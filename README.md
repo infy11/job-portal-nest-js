@@ -24,12 +24,12 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-##Running with docker containers 
+## Running with docker containers 
 ```javascript
 docker-compose up 
 ```
 
-##create user 
+## create user 
 Access GQL playground on http://localhost:3000
 ```javascript
 mutation createUser {
@@ -65,7 +65,7 @@ mutation deleteVacancy {
 
 ```
 
-##Update Vacancy
+## Update Vacancy
 ```javascript
 mutation UpdateVacancies {
   updateVacancy(experience:"5", title:"sde", position:"SSE", skills:["c#"], description:"description", salary:"30000" )
