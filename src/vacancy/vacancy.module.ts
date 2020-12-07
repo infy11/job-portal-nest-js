@@ -16,5 +16,6 @@ import { MongooseModule } from '@nestjs/mongoose';
   ],
   controllers: [VacancyController],
   providers: [VacancyService, VacancyResolver],
+  exports: [VacancyService],
 })
 export class VacancyModule {}

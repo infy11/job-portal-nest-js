@@ -23,6 +23,12 @@ type User {
   email: String!
   password: String!
   company: String!
+  roles: [Role!]!
+}
+
+enum Role {
+  User
+  Admin
 }
 
 type Token {
@@ -37,7 +43,8 @@ type Query {
 }
 
 type Mutation {
-  createVacancy(company: String!, postedBy: String!, experience: String!, position: String!, skills: [String!]!, salary: String!, description: String!, title: String!): Vacancy!
-  createCompany(email: String!, name: String!): Company!
-  createItem(company: String!, password: String!, email: String!, name: String!): User!
+  createUser(roles: [String!]!, company: String!, password: String!, email: String!, name: String!): User!
+  createVacancy(experience: String!, position: String!, skills: [String!]!, salary: String!, description: String!, title: String!): Vacancy!
+  updateVacancy(experience: String!, position: String!, skills: [String!]!, salary: String!, description: String!, title: String!): Boolean!
+  deleteVacancy(title: String!): Boolean!
 }

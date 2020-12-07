@@ -7,6 +7,8 @@ import { UserResolver } from './user.resolver';
 import { AuthService } from '../auth/auth.service';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from '../auth/constants';
+import { CompanyModule } from '../company/company.module';
+import { VacancyModule } from '../vacancy/vacancy.module';
 
 @Module({
   controllers: [UserController],
@@ -21,6 +23,8 @@ import { jwtConstants } from '../auth/constants';
         schema: UserSchema,
       },
     ]),
+    CompanyModule,
+    VacancyModule,
   ],
   providers: [UserService, UserResolver, AuthService],
   exports: [UserService],

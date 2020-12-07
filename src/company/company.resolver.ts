@@ -10,14 +10,4 @@ export class CompanyResolver {
   async Companies() {
     return this.CompanyService.findAll();
   }
-  @Mutation((returns) => Company)
-  async createCompany(
-    @Args('name') name: string,
-    @Args('email') email: string,
-  ): Promise<Company> {
-    return this.CompanyService.create({
-      name: name,
-      user: email,
-    });
-  }
 }

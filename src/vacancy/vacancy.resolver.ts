@@ -9,26 +9,4 @@ export class VacancyResolver {
   async Vacancies() {
     return this.vacancyService.findAll();
   }
-  @Mutation((returns) => Vacancy)
-  async createVacancy(
-    @Args('title') title: string,
-    @Args('description') description: string,
-    @Args('salary') salary: string,
-    @Args({ name: 'skills', type: () => [String] }) skills: [string],
-    @Args('position') position: string,
-    @Args('experience') experience: string,
-    @Args('postedBy') postedBy: string,
-    @Args('company') company: string,
-  ): Promise<Vacancy> {
-    return this.vacancyService.create({
-      title: title,
-      description: description,
-      salary: salary,
-      company: company,
-      position: position,
-      experience: experience,
-      skills: skills,
-      postedBy: postedBy,
-    });
-  }
 }

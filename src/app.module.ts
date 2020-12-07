@@ -7,7 +7,6 @@ import { CompanyModule } from './company/company.module';
 import { UserModule } from './user/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
-
 const path = require('path');
 
 @Module({
@@ -15,12 +14,11 @@ const path = require('path');
     GraphQLModule.forRoot({
       autoSchemaFile: path.join(process.cwd(), 'src/schema.gql'),
     }),
-    MongooseModule.forRoot(
-      'mongodb://root:rgcsmdbpassword@localhost:27017/admin',
-    ),
+    MongooseModule.forRoot('mongodb://root:root@mongo:27017/admin'),
     VacancyModule,
     CompanyModule,
     UserModule,
+    VacancyModule,
     AuthModule,
   ],
   controllers: [AppController],
