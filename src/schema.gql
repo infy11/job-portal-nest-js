@@ -1,0 +1,43 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Vacancy {
+  title: String!
+  description: String!
+  salary: String!
+  skills: [String!]!
+  position: String!
+  experience: String!
+  postedBy: String!
+  company: String!
+}
+
+type Company {
+  name: String!
+  users: [String!]!
+}
+
+type User {
+  name: String!
+  email: String!
+  password: String!
+  company: String!
+}
+
+type Token {
+  access_token: String!
+}
+
+type Query {
+  Vacancies: [Vacancy!]!
+  Companies: [Company!]!
+  login(password: String!, username: String!): Token!
+  Users: [User!]!
+}
+
+type Mutation {
+  createVacancy(company: String!, postedBy: String!, experience: String!, position: String!, skills: [String!]!, salary: String!, description: String!, title: String!): Vacancy!
+  createCompany(email: String!, name: String!): Company!
+  createItem(company: String!, password: String!, email: String!, name: String!): User!
+}
